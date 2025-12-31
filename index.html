@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predpoved pocasi</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href=" " rel="stylesheet"><!-- doplnit fonty -->
+
+    <link rel="stylesheet" href="./styles/main.css">
+    
+</head>
+<body>
+    <div id="autocomplete-search">
+        <!-- prvni oddil s naseptavacem a zakl. informacemi -->
+        <div class="wrapper">
+            <div class="row search">
+                <input type="text" id="input-box" placeholder="Zadejte město" autocomplete="off">
+                <button id="search-weather-btn">search <!--pridat ikonu lupy--></button>
+            </div>
+            <div class="row result">
+                <div id="result-box"></div>
+            </div>
+        </div>
+    </div>
+    <div id="weather-output">
+        <!-- druhy oddil s vystupnimi daty -->
+    </div>
+
+    <footer>
+        <!-- spodni lista -->
+    </footer>
+    <script src="./javascript/main.js" type="module" defer></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+body {
+    #weather-output {
+        .root {
+            > h1 {
+                text-align: right;
+                color: red;
+            }
+            .wrapper {
+                .inner-one {
+                    border: 3px solid blue;
+                    .main-info {
+                        border: 2px solid purple;
+                        .main-info-visual {
+                            border: 1px solid blueviolet;
+                            img {
+                            }
+                        }
+                        .main-info-data {
+                            border: 1px solid blueviolet;
+                            h2 {
+                            }
+                            h1 {
+                            }
+                            p {
+                            }
+                        }
+                    }
+                    .time-line {
+                        border: 2px solid green;
+                        div {
+                            h4 {
+                            }
+                        }
+                    }
+                }
+                .inner-two {
+                    border: 3px solid red;
+                    div {
+                        border: 2px solid orange;
+                        padding: 5px;
+                        h3 {
+                        }
+                        h2 {
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
