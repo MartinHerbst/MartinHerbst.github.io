@@ -1,117 +1,161 @@
 
-
-
 body {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    padding: 10px;
-    #autocomplete-search {
-        width: 100%;
-        min-width: 0;
-        .wrapper {
-            
-            .search {
-                display: flex;
-                flex-flow: row wrap;
-                justify-content: center;
-                
-                input {
-                    flex: 1;
-                    max-width: 300px;
-                    min-width: 70px;
-                }
-                button {
-                    flex: 1;
-                    max-width: 300px;
-                    min-width: 70px;
-                }
-            }
-            .result {
-                #result-box {
+    #weather-app {
 
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+
+
+
+        #autocomplete-search {
+            width: 100%;
+            min-width: 0;
+            .wrapper {
+                
+                .search {
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
+                    
+                    input {
+                        flex: 1;
+                        max-width: 300px;
+                        min-width: 70px;
+                    }
+                    button {
+                        flex: 1;
+                        max-width: 300px;
+                        min-width: 70px;
+                    }
+                }
+                .result {
+                    #result-box {
+
+                    }
                 }
             }
         }
-    }
-    #weather-output {
-        position: relative;
-        width: 1000px;
-        height: auto;
-        .root {
-
-            .wrapper {
-
-                .inner-one {
-                    .main-info {
-                        display: flex;
-                        flex-wrap: wrap-reverse;
+        #weather-output {
+            width: 100%;
+            .root {
+                width: 100%;
+                .wrapper {
+                    width: 100%;
+                    .inner-one {
                         width: 100%;
-                        height: 300px;
-                        .main-info-visual {
+                        .main-info {
                             display: flex;
-                            justify-content: center;
-                            align-items: center;
-
-                            flex: 1;
+                            flex-wrap: wrap-reverse;
                             height: 300px;
-
                             
-                            img {
-                                width: 100%;
-                                height: 100%;
-                                object-fit: contain;
+                            .main-info-visual {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                flex: 1;
+                                height: 300px;
+                                
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: contain;
+                                }
                             }
-                        }
-                        .main-info-data {
-                            flex: 1;
-                            text-align: right;
+                            .main-info-data {
+                                flex: 1;
+                                text-align: right;
+                            }
                         }
                     }
                     .time-line {
                         display: flex;
-                        flex-wrap: wrap;
-
-                        width: 100%;                //upravit. aby to pri mensich rozlisenich bylo lepsi
-                        height:fit-content;
+                        justify-content: space-between;
                         position: relative;
+                        width: 100%;
+
+                        overflow-x: auto;
+                        overflow-y: hidden;
+                            
                         
+                        ::before {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            right: 0;
+                            height: 2px;
+                            background-color: #bbb;
+                            
+                        }
 
                         div {              
-                            height: 80px;
-                            flex: 1 1 auto;
-                            padding: 3px;
+                            position: relative;
+                            flex: 1;
+                            min-width: 120px;
+
+                            ::after {
+                                content: "";
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                width: 12px;
+                                height: 12px;
+                                background: #0077ff;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                    .inner-two {
+                        display: flex;
+                        flex-flow: row wrap;
+                        justify-content: center;
+                        align-items: stretch;
+
+                        gap: 10px;
+                        width: 100%;
+                        height: 160px;
+
+                        div {
+                            flex: 1;
                         }
                     }
                 }
-                .inner-two {
-                    display: flex;
-                    flex-flow: row wrap;
-                    justify-content: center;
-                    align-items: stretch;
-
-                    gap: 10px;
+            }
+        }
+        @media (max-width: 600px) {
+            .inner-one {
+                .main-info {
+                    flex-wrap: wrap-reverse;
+                    height: auto;
                     width: 100%;
-                    height: 160px;
+                }
+            }
+            .time-line {
+               
+                
+            }
+            .inner-two {
+                
+                flex-direction: column;
+                height: auto;
+                width: 100%;
+                div {
+                    width: 100%;
+                    height: min-content;
                 }
             }
         }
-    }
-    @media (max-width: 600px) {
-        .main-info {
-            flex-direction: column;
-            height: auto;
-            width: 100%;
-        }
-        
-        .inner-two {
-            flex-direction: column;
-            height: auto;
-            width: 100%;
-            div {
-                width: 100%;
-                height: min-content;
+        @media (max-width: 300px) {
+            .main-info {
+                flex-direction: column;
             }
         }
     }
 }
+    

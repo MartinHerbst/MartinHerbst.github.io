@@ -90,7 +90,7 @@ export class WeatherRenderer {
         builder.appendParagraph("vítr " + weatherDay.get_windSpeed(0) + this.speedUnit);
         builder.appendParagraph(weatherDay.get_skyStatus(0));
 
-        builder.setParent(innerOne);
+        builder.setParent(wrapper);
 
         const timeLine = builder.appendDiv("time-line");
         builder.setParent(timeLine);

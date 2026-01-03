@@ -1,70 +1,100 @@
 body {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  padding: 10px;
 }
-body #autocomplete-search {
+body #weather-app {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+}
+body #weather-app #autocomplete-search {
   width: 100%;
   min-width: 0;
 }
-body #autocomplete-search .wrapper .search {
+body #weather-app #autocomplete-search .wrapper .search {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 }
-body #autocomplete-search .wrapper .search input {
+body #weather-app #autocomplete-search .wrapper .search input {
   flex: 1;
   max-width: 300px;
   min-width: 70px;
 }
-body #autocomplete-search .wrapper .search button {
+body #weather-app #autocomplete-search .wrapper .search button {
   flex: 1;
   max-width: 300px;
   min-width: 70px;
 }
-body #weather-output {
-  position: relative;
-  width: 1000px;
-  height: auto;
+body #weather-app #weather-output {
+  width: 100%;
 }
-body #weather-output .root .wrapper .inner-one .main-info {
+body #weather-app #weather-output .root {
+  width: 100%;
+}
+body #weather-app #weather-output .root .wrapper {
+  width: 100%;
+}
+body #weather-app #weather-output .root .wrapper .inner-one {
+  width: 100%;
+}
+body #weather-app #weather-output .root .wrapper .inner-one .main-info {
   display: flex;
   flex-wrap: wrap-reverse;
-  width: 100%;
   height: 300px;
 }
-body #weather-output .root .wrapper .inner-one .main-info .main-info-visual {
+body #weather-app #weather-output .root .wrapper .inner-one .main-info .main-info-visual {
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 1;
   height: 300px;
 }
-body #weather-output .root .wrapper .inner-one .main-info .main-info-visual img {
+body #weather-app #weather-output .root .wrapper .inner-one .main-info .main-info-visual img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
 }
-body #weather-output .root .wrapper .inner-one .main-info .main-info-data {
+body #weather-app #weather-output .root .wrapper .inner-one .main-info .main-info-data {
   flex: 1;
   text-align: right;
 }
-body #weather-output .root .wrapper .inner-one .time-line {
+body #weather-app #weather-output .root .wrapper .time-line {
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
+  justify-content: space-between;
   position: relative;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
-body #weather-output .root .wrapper .inner-one .time-line div {
-  height: 80px;
-  flex: 1 1 auto;
-  padding: 3px;
+body #weather-app #weather-output .root .wrapper .time-line ::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #bbb;
 }
-body #weather-output .root .wrapper .inner-two {
+body #weather-app #weather-output .root .wrapper .time-line div {
+  position: relative;
+  flex: 1;
+  min-width: 120px;
+}
+body #weather-app #weather-output .root .wrapper .time-line div ::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: #0077ff;
+  border-radius: 50%;
+}
+body #weather-app #weather-output .root .wrapper .inner-two {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -73,47 +103,58 @@ body #weather-output .root .wrapper .inner-two {
   width: 100%;
   height: 160px;
 }
+body #weather-app #weather-output .root .wrapper .inner-two div {
+  flex: 1;
+}
 @media (max-width: 600px) {
-  body .main-info {
+  body #weather-app .inner-one .main-info {
+    flex-wrap: wrap-reverse;
+    height: auto;
+    width: 100%;
+  }
+  body #weather-app .inner-two {
     flex-direction: column;
     height: auto;
     width: 100%;
   }
-  body .inner-two {
-    flex-direction: column;
-    height: auto;
-    width: 100%;
-  }
-  body .inner-two div {
+  body #weather-app .inner-two div {
     width: 100%;
     height: -moz-min-content;
     height: min-content;
   }
 }
+@media (max-width: 300px) {
+  body #weather-app .main-info {
+    flex-direction: column;
+  }
+}
 
-body #weather-output .root > h1 {
+body #weather-app {
+  padding: 10px;
+}
+body #weather-app #weather-output .root > h1 {
   text-align: right;
   color: red;
 }
-body #weather-output .root .wrapper .inner-one {
+body #weather-app #weather-output .root .wrapper .inner-one {
   border: 3px solid blue;
 }
-body #weather-output .root .wrapper .inner-one .main-info {
+body #weather-app #weather-output .root .wrapper .inner-one .main-info {
   border: 2px solid purple;
 }
-body #weather-output .root .wrapper .inner-one .main-info .main-info-visual {
+body #weather-app #weather-output .root .wrapper .inner-one .main-info .main-info-visual {
   border: 1px solid blueviolet;
 }
-body #weather-output .root .wrapper .inner-one .main-info .main-info-data {
+body #weather-app #weather-output .root .wrapper .inner-one .main-info .main-info-data {
   border: 1px solid blueviolet;
 }
-body #weather-output .root .wrapper .inner-one .time-line {
+body #weather-app #weather-output .root .wrapper .time-line {
   border: 2px solid green;
 }
-body #weather-output .root .wrapper .inner-two {
+body #weather-app #weather-output .root .wrapper .inner-two {
   border: 3px solid red;
 }
-body #weather-output .root .wrapper .inner-two div {
+body #weather-app #weather-output .root .wrapper .inner-two div {
   border: 2px solid orange;
   padding: 5px;
 }
