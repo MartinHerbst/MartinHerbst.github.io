@@ -44,7 +44,7 @@ export class WeatherRenderer {
             let end = ((i+1)*((weatherData.list.length)/this.dayCount));
             let chunk = weatherData.list.slice(start, end);
 
-            treeList[i] = this.treeConstructor(cityName, this.dayCount, chunk, weatherData);    //chunk momentalne obsahuje jen 8 zaznamu pro samostatny den
+            treeList[i] = this.treeConstructor(cityName, this.dayCount, chunk, weatherData, i);    //chunk momentalne obsahuje jen 8 zaznamu pro samostatny den
         }
         
         this.completeTreeList = treeList;
@@ -52,7 +52,7 @@ export class WeatherRenderer {
         
     }
 
-    treeConstructor(cityName, dayCount, chunk, weatherData) {
+    treeConstructor(cityName, dayCount, chunk, weatherData, index) {
         /*
         Metoda pro postaveni konkretniho DOM stromu - widgetu podle zadanych parametru
         */
@@ -112,6 +112,9 @@ export class WeatherRenderer {
 
         for(let i=0;i<dayCount;i++){
             let daySwitch = builder.appendDiv(`day-switch-${i+1}`);
+            if(index == i) {
+                daySwitch.classList.add("active");
+            }
             daySwitch.addEventListener("click", () => {
                 this.switchDay(i);    //nastaveni prepinani dnu pro jednotlive DOM div elementy .day-switch-[0-*]
             })
@@ -135,6 +138,8 @@ export class WeatherRenderer {
         Metoda pro prepinani widgetu podle zvoleneho dne
         */
         this.weatherOutput.innerHTML = "";
+        //let root = this.completeTreeList[index];
+        //root.querySelector(`.day-switch-${index+1}`).classList.add('active');
         this.weatherOutput.appendChild(this.completeTreeList[index]);
     }
 
