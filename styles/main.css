@@ -41,31 +41,35 @@ body #weather-app #weather-output .root .wrapper .inner-one {
 }
 body #weather-app #weather-output .root .wrapper .inner-one .main-info {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap-reverse;
-  height: 300px;
+  min-width: 0;
 }
 body #weather-app #weather-output .root .wrapper .inner-one .main-info .main-info-visual {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
-  height: 300px;
+  flex: 1 1 240px;
+  min-width: 0;
 }
 body #weather-app #weather-output .root .wrapper .inner-one .main-info .main-info-visual img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
   -o-object-fit: contain;
      object-fit: contain;
 }
 body #weather-app #weather-output .root .wrapper .inner-one .main-info .main-info-data {
-  flex: 1;
+  flex: 1 1 240px;
   text-align: right;
+  min-width: 0;
 }
 body #weather-app #weather-output .root .wrapper .time-line {
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
   position: relative;
   width: 100%;
+  min-width: 0;
   overflow-x: auto;
   overflow-y: hidden;
 }
@@ -80,7 +84,7 @@ body #weather-app #weather-output .root .wrapper .time-line ::before {
 }
 body #weather-app #weather-output .root .wrapper .time-line div {
   position: relative;
-  flex: 1;
+  flex: 0 0 120px;
   min-width: 120px;
 }
 body #weather-app #weather-output .root .wrapper .time-line div ::after {
@@ -101,16 +105,28 @@ body #weather-app #weather-output .root .wrapper .inner-two {
   align-items: stretch;
   gap: 10px;
   width: 100%;
-  height: 160px;
+  height: auto;
 }
 body #weather-app #weather-output .root .wrapper .inner-two div {
   flex: 1;
 }
-@media (max-width: 600px) {
+@media (min-width: 601px) {
+  body #weather-app .main-info {
+    height: 300px;
+  }
+  body #weather-app .main-info-visual {
+    height: 300px;
+  }
+}
+@media (max-width: 601px) {
   body #weather-app .inner-one .main-info {
-    flex-wrap: wrap-reverse;
+    flex-direction: column-reverse;
+    flex-wrap: unset;
     height: auto;
     width: 100%;
+  }
+  body #weather-app .inner-one .main-info .main-info-visual {
+    height: auto;
   }
   body #weather-app .inner-two {
     flex-direction: column;
@@ -123,18 +139,13 @@ body #weather-app #weather-output .root .wrapper .inner-two div {
     height: min-content;
   }
 }
-@media (max-width: 300px) {
-  body #weather-app .main-info {
-    flex-direction: column;
-  }
-}
-
 body #weather-app {
   padding: 10px;
 }
 body #weather-app #weather-output .root > h1 {
   text-align: right;
   color: red;
+  font-size: large;
 }
 body #weather-app #weather-output .root .wrapper .inner-one {
   border: 3px solid blue;
@@ -162,4 +173,11 @@ body #weather-app #weather-output .root .wrapper .inner-two div {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  overflow-wrap: anywhere;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
 }/*# sourceMappingURL=main.css.map */
