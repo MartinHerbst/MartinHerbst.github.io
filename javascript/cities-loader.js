@@ -1,4 +1,3 @@
-
 export class Cities {
     /*
     Trida zodpovedna za nacitany dat z json souboru

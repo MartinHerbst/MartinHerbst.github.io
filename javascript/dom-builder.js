@@ -1,4 +1,3 @@
-
 export class DOMBuilder {
     /*
     Trida pro vytvoreni DOM stromu

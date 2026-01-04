@@ -1,67 +1,128 @@
+@use "variables";
+
+ul, li {
+    list-style-type: none;
+    background-color: white;
+    font-family: variables.$mainFontStyle;
+}
+li {
+    padding: 3px;
+    cursor: pointer;
+}
+ul li:nth-child(2n+1) {
+    background-color: #DEDEDE;
+}
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+    font-family: variables.$mainFontStyle;
+}
+
 body {
+    background-color: variables.$mainBackground;
     #weather-app {
-        padding: 10px;
+        padding: 5px;
+        margin-top: 100px;
+        #autocomplete-search {
+            .wrapper {
+                .search {
+                    input,
+                    button {
+                        font-size: 1rem;
+                        padding: 3px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-bottom: 3px solid variables.$darkBlueColor;
+
+                        border-bottom-left-radius: 3px;
+                        border-bottom-right-radius: 3px;
+                    }
+                    button {
+                        i {
+                            color: variables.$darkBlueColor;
+                        }
+                    }
+                }
+            }
+        }
         #weather-output {
             .root {
                 > h1 {
                     text-align: right;
-                    color: red;
-                    font-size: large;
+                    font-size: clamp(2rem, 2vw, 2.5vw);
+                    color: variables.$darkBlueColor;
                 }
                 .wrapper {
                     .inner-one {
-                        border: 3px solid blue;
+                        background: variables.$innerOneBackground;
+                        background: variables.$innerOneGradient;
+
+                        border-bottom: 4px solid variables.$blueDetailColor;
+                        
                         .main-info {
-                            border: 2px solid purple;
-                            .main-info-visual {
-                                border: 1px solid blueviolet;
-                                img {
-                                }
-                            }
                             .main-info-data {
-                                border: 1px solid blueviolet;
+                                text-align: right;
                                 h2 {
+                                    font-size: clamp(1.5rem, 1vw, 1.5vw);
+                                    color: variables.$greyBlueColor;
                                 }
                                 h1 {
+                                    font-size: clamp(2rem, 2.5vw, 3vw);
+                                    color: variables.$lighterDarkBlueColor;
                                 }
                                 p {
+                                    font-size: clamp(1rem, 0.8vw, 1vw);
+                                    color: variables.$lighterGreyBlueColor;
                                 }
                             }
                         }
                     }
                     .time-line {
-                        border: 2px solid green;
                         div {
-
-                            h4 {
-
+                            h4:nth-child(1) {
+                                color: variables.$lighterDarkBlueColor;
+                            }
+                            h4:nth-child(2) {
+                                color: variables.$lighterDarkBlueColor;
+                            }
+                            h4:nth-child(3) {
+                                color: variables.$greyBlueColor;
                             }
                         }
                         div::before {
-                            background-color: blue;
+                            background-color: variables.$lighterGreyBlueColor;
                         }
                         div::after {
-                            background-color: red;
+                            background-color: variables.$darkBlueColor;
                         }
                     }
                     .time-line::before {
-                        background: blue;
+                        background: variables.$lighterGreyBlueColor;
                     }
                     .inner-two {
-                        border: 3px solid red;
                         div {
-                            border: 2px solid orange;
+                            cursor: pointer;
                             padding: clamp(0px, 5px, 10px);
-
-                            
+                            background: variables.$innerOneBackground;
+                            background: variables.$innerOneGradient;
                             h3 {
-                                font-size: clamp(1rem, 2vw, 2rem);;
+                                color: variables.$darkBlueColor;
+                                font-size: clamp(1rem, 0.6vw, 0.8vw);;
                             }
                             h2 {
+                                color: variables.$lighterDarkBlueColor;
+                                font-size: clamp(1rem, 0.8vw, 1vw);;
                             }
                         }
+                        div:hover {
+                            border-right: 5px solid variables.$blueDetailColor;
+                            border-top: 3px solid variables.$blueDetailColor;
+                            transition: 150ms ease;
+                        }
                         div.active {
-                            background-color: greenyellow;
+                            border-right: 5px solid variables.$blueDetailColor;
+                            border-top: 3px solid variables.$blueDetailColor;
                         }
                     }
                 }
@@ -69,15 +130,42 @@ body {
         }
     }
     @media (min-width: 601px) {
-        
+        #weather-app {
+         border-bottom-right-radius: 30px;
+         border-bottom-left-radius: 30px;
+         padding-top: 25px;
+         padding-bottom: 28px;
+        }
+        .inner-one {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .time-line {
+            margin-top: 20px;
+        }
+        .inner-two {
+            margin-top: 20px;
+            div {
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+                h2 {
+                    padding-top: 10px;
+                }
+            }
+            div.active {
+                -webkit-box-shadow: 0px 4px 10px 6px rgba(0,0,0,0.41); 
+                box-shadow: 0px 4px 10px 6px rgba(0,0,0,0.41);
+            }
+        }
     }
     @media (max-width: 601px) {
-
+        .inner-two {
+            div.active {
+                -webkit-box-shadow: 0px 6px 4px 0px rgba(0,0,0,0.53); 
+                box-shadow: 0px 6px 4px 0px rgba(0,0,0,0.53);
+            }
+        }
     }
-    @media (max-width: 430px) {
-
-    }
-    
 }
 
     

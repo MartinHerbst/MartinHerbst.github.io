@@ -25,7 +25,6 @@ export class WeatherRenderer {
             this.tempUnit = "°F"
             this.speedUnit = "mph"
         }
-
     }
 
     renderData(weatherData, defaultCity=null) {
@@ -33,6 +32,9 @@ export class WeatherRenderer {
         Ridici metoda pro vypis udaju o pocasi
         */
         var cityName = this.input.value;
+        if (this.input.value == ""){
+            cityName = "Olomouc";
+        }
         if(defaultCity) {       //je potreba zvlast nastavit pro defaultni mesto
             cityName = defaultCity;
         }
@@ -49,7 +51,6 @@ export class WeatherRenderer {
         
         this.completeTreeList = treeList;
         this.switchDay();
-        
     }
 
     treeConstructor(cityName, dayCount, chunk, weatherData, index) {
@@ -126,7 +127,6 @@ export class WeatherRenderer {
 
             builder.setParent(innerTwo);
         }
-
 
         builder.setParent(builder.root);
         return builder.root;

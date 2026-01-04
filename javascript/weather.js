@@ -1,4 +1,3 @@
-
 export class Weather {
     /*
     Trida pro ziskavani informaci o pocasi

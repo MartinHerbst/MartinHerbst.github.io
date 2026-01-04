@@ -1,4 +1,3 @@
-
 export class Autocomplete {
     /*
     Trida zodpovedna za logiku naseptavace

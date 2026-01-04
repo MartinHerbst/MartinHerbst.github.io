@@ -1,4 +1,3 @@
-
 export class WeatherSearcher {
     /*
     Trida pro obsluhu vyhledani informaci o pocsi ve vyhledavanem meste
@@ -60,7 +59,6 @@ export class WeatherSearcher {
         }
         return result[0];
     }
-
 
     async searchWeather() {
         /*
