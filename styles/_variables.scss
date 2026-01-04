@@ -1,12 +1,14 @@
 $mainBackground: #EBFFFD;
 $innerOneBackground: #ADFBFF;
-$innerOneGradient: linear-gradient(53deg,rgba(173, 251, 255, 1) 0%, rgba(207, 255, 232, 1) 60%);
+$gradientBackgroundOne: linear-gradient(53deg,rgba(173, 251, 255, 1) 0%, rgba(207, 255, 232, 1) 60%);
+$gradientBackgroundTwo: linear-gradient(53deg, #B3EDFF 0%, #1890B5 60%);
+
+
 $innerTwoBackgound: #C9F2E0;
 $blueDetailColor: #2BC3FF;
-
 $darkBlueColor: #003347;
-$lighterDarkBlueColor: #0075A3;
-$greyBlueColor: #405A63;
-$lighterGreyBlueColor: #658D9A;
+$primaryTextColor: #FAF9F6;
+$secondaryTextColor: #D6D6D6;
+
 
 $mainFontStyle: "Funnel Sans", sans-serif;

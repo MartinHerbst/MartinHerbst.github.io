@@ -56,62 +56,58 @@ body {
                 .wrapper {
                     .inner-one {
                         background: variables.$innerOneBackground;
-                        background: variables.$innerOneGradient;
+                        background: variables.$gradientBackgroundTwo;
 
                         border-bottom: 4px solid variables.$blueDetailColor;
                         
                         .main-info {
                             .main-info-data {
+                                padding-right: 10px;
+                                padding-top: 2px;
                                 text-align: right;
                                 h2 {
                                     font-size: clamp(1.5rem, 1vw, 1.5vw);
-                                    color: variables.$greyBlueColor;
+                                    color: variables.$primaryTextColor;
                                 }
                                 h1 {
                                     font-size: clamp(2rem, 2.5vw, 3vw);
-                                    color: variables.$lighterDarkBlueColor;
+                                    color: variables.$primaryTextColor;
                                 }
                                 p {
-                                    font-size: clamp(1rem, 0.8vw, 1vw);
-                                    color: variables.$lighterGreyBlueColor;
+                                    font-size: clamp(1rem, 0.7vw, 1vw);
+                                    color: variables.$secondaryTextColor;
                                 }
                             }
                         }
                     }
                     .time-line {
                         div {
-                            h4:nth-child(1) {
-                                color: variables.$lighterDarkBlueColor;
-                            }
-                            h4:nth-child(2) {
-                                color: variables.$lighterDarkBlueColor;
-                            }
-                            h4:nth-child(3) {
-                                color: variables.$greyBlueColor;
+                            h4 {
+                                color: variables.$darkBlueColor;
                             }
                         }
                         div::before {
-                            background-color: variables.$lighterGreyBlueColor;
+                            background-color: variables.$secondaryTextColor;
                         }
                         div::after {
-                            background-color: variables.$darkBlueColor;
+                            background-color: variables.$secondaryTextColor;
                         }
                     }
                     .time-line::before {
-                        background: variables.$lighterGreyBlueColor;
+                        background: variables.$secondaryTextColor;
                     }
                     .inner-two {
                         div {
                             cursor: pointer;
                             padding: clamp(0px, 5px, 10px);
                             background: variables.$innerOneBackground;
-                            background: variables.$innerOneGradient;
+                            background: variables.$gradientBackgroundTwo;
                             h3 {
-                                color: variables.$darkBlueColor;
+                                color: variables.$primaryTextColor;
                                 font-size: clamp(1rem, 0.6vw, 0.8vw);;
                             }
                             h2 {
-                                color: variables.$lighterDarkBlueColor;
+                                color: variables.$darkBlueColor;
                                 font-size: clamp(1rem, 0.8vw, 1vw);;
                             }
                         }
@@ -121,8 +117,8 @@ body {
                             transition: 150ms ease;
                         }
                         div.active {
-                            border-right: 5px solid variables.$blueDetailColor;
-                            border-top: 3px solid variables.$blueDetailColor;
+                            border-right: 5px solid variables.$darkBlueColor;
+                            border-top: 3px solid variables.$darkBlueColor;
                         }
                     }
                 }
@@ -153,16 +149,26 @@ body {
                 }
             }
             div.active {
-                -webkit-box-shadow: 0px 4px 10px 6px rgba(0,0,0,0.41); 
-                box-shadow: 0px 4px 10px 6px rgba(0,0,0,0.41);
+                background: linear-gradient(145deg, #9ce2e6, #b9ffff);
             }
+        }
+        .inner-two::before {
+            content: "";
+            position: absolute;
+            top: 60%;
+            left: 70px;
+            right: 70px;
+            height: 10px;
+            background: variables.$darkBlueColor;
+            opacity: 30%;
         }
     }
     @media (max-width: 601px) {
         .inner-two {
             div.active {
-                -webkit-box-shadow: 0px 6px 4px 0px rgba(0,0,0,0.53); 
-                box-shadow: 0px 6px 4px 0px rgba(0,0,0,0.53);
+                background: linear-gradient(145deg, #9ce2e6, #b9ffff);
+                box-shadow:  2px 2px 4px #8ccbcf,
+                            -2px -2px 4px #ceffff;
             }
         }
     }
