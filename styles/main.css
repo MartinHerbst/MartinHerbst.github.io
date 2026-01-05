@@ -243,6 +243,9 @@ body #weather-app #autocomplete-search .wrapper .search button {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
 }
+body #weather-app #autocomplete-search .wrapper .search button {
+  cursor: pointer;
+}
 body #weather-app #autocomplete-search .wrapper .search button i {
   color: #003347;
 }

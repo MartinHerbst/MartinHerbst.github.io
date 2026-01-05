@@ -39,6 +39,7 @@ body {
                         border-bottom-right-radius: 3px;
                     }
                     button {
+                        cursor: pointer;
                         i {
                             color: variables.$darkBlueColor;
                         }
