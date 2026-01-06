@@ -35,8 +35,8 @@ export class Autocomplete {
                 return this.normalizeInput(city.name).includes(this.normalizeInput(input));
             });
         }
-
-        this.display(result.map(city => city.name));
+        
+        this.display(result.slice(0, 10).map(city => city.name));
     }
 
     display(resultNames) {
