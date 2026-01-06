@@ -1,4 +1,4 @@
-# Aplikace pro převod počasí
+# Aplikace pro předpověď počasí
 Jednoduchá webová aplikaci, pro zobrazení předpověďi počasí na následujících pět dní.
 
 Aplikace je vytvořena pomocí technologií **HTML5**, **CSS3** (s využitím preprocesoru **SCSS**) a **JavaScriptu**.  
