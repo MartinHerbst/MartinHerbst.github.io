@@ -51,7 +51,7 @@ body {
             .root {
                 > h1 {
                     text-align: right;
-                    font-size: clamp(2rem, 2vw, 2.5vw);
+                    font-size: clamp(2rem, 2vw, 60px);
                     color: variables.$darkBlueColor;
                 }
                 .wrapper {
@@ -67,15 +67,15 @@ body {
                                 padding-top: 2px;
                                 text-align: right;
                                 h2 {
-                                    font-size: clamp(1.5rem, 1vw, 1.5vw);
+                                    font-size: clamp(1.5rem, 1vw, 40px);
                                     color: variables.$primaryTextColor;
                                 }
                                 h1 {
-                                    font-size: clamp(2rem, 2.5vw, 3vw);
+                                    font-size: clamp(2rem, 2.5vw, 70px);
                                     color: variables.$primaryTextColor;
                                 }
                                 p {
-                                    font-size: clamp(1rem, 0.7vw, 1vw);
+                                    font-size: clamp(1rem, 0.7vw, 30px);
                                     color: variables.$secondaryTextColor;
                                 }
                             }
@@ -105,11 +105,11 @@ body {
                             background: variables.$gradientBackgroundTwo;
                             h3 {
                                 color: variables.$primaryTextColor;
-                                font-size: clamp(1rem, 0.6vw, 0.8vw);;
+                                font-size: clamp(1rem, 0.6vw, 20px);;
                             }
                             h2 {
                                 color: variables.$darkBlueColor;
-                                font-size: clamp(1rem, 0.8vw, 1vw);;
+                                font-size: clamp(1rem, 0.8vw, 30px);;
                             }
                         }
                         div:hover {
